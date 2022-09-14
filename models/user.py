@@ -1,14 +1,15 @@
 
-from ..database import Base
+from database import Base
 from sqlalchemy import Column, String, Text, DateTime
 from sqlalchemy.sql import func
+from utils.uuid import generate_uuid
 import uuid
 
 
 class User(Base):
     __tablename__ = "user"
 
-    id = Column(String, nullable=False, primary_key=True, default=uuid.uuid4)
+    id = Column(String, nullable=False, primary_key=True, default=generate_uuid)
     user_id = Column(String, nullable=False)
     name = Column(String, nullable=False)
     password = Column(String, nullable=False)
