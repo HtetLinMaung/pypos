@@ -4,9 +4,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN pip install "fastapi[all]" 
-RUN pip install "python-jose[cryptography]"
-RUN pip install "passlib[bcrypt]"
+RUN pip install -r requirements.txt
 
 
 CMD [ "uvicorn", "main:app", "--reload" ]
